@@ -1,0 +1,38 @@
+#include<stdio.h>
+int binary_search(int *arr,int n,int se)
+{
+	int L,H,M;
+	L=0,H=n-1;
+	while(L<=H)
+	{
+		M=(L+H)/2;
+		if(arr[M]==se)
+		{
+			return M;
+		}
+		else if(arr[M]>se)
+		{
+			H=M-1;
+		}
+		else if(arr[M]<se)
+		{
+			L=M+1;
+		}
+		else
+		{
+			return -1;
+		}
+	}
+}	
+int main()
+{
+	int n,arr[100],i,se,res;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);//sorted
+	}
+	scanf("%d",&se);
+	res=binary_search(arr,n,se);//fun call
+	printf("%d",res);//pos or -1
+}
