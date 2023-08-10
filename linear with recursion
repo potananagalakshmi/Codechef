@@ -1,0 +1,31 @@
+#include<stdio.h>
+/*
+10 20 3 1 5 66 44 32
+0  1  2 3 4 5 6 7  8
+            i
+se=66            
+*/ 
+int linearsearch_rec(int *arr,int n,int i,int se)
+{
+	if(i==n)//5==8
+	{
+		return -1;
+	}
+	if(arr[i]==se)//66==66
+	{
+		return i;
+	}
+	linearsearch_rec(arr,n,i+1,se);//lsr(arr,8,5,66)
+}
+int main()
+{
+	int n,arr[100],i,se,res;
+	scanf("%d",&n);
+	for(i=0;i<n;i++)
+	{
+		scanf("%d",&arr[i]);
+	}
+	scanf("%d",&res);
+	res=linearsearch_rec(arr,n,0,se);//function call
+	printf("%d",res);//position or -1
+}
