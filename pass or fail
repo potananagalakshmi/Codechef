@@ -1,0 +1,24 @@
+#include<stdio.h>
+
+int main ()
+{
+    int n,z,x,y,i,q,m,h;
+
+    scanf("%d",&n);
+
+    while(n--)
+    {
+      scanf("%d %d %d",&x,&y,&z);
+      m=y*3;
+      h=x-y;
+      q=m-h;
+      if(z<=q) printf("PASS\n");
+      else printf("FAIL\n");
+    
+
+
+    }
+
+    return 0;
+
+}
